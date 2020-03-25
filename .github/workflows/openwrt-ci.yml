@@ -11,7 +11,7 @@ name: OpenWrt-CI
 
 on:
   schedule:
-    - cron: 15 16 * * *
+    - cron: 28 11 * * *
 
 jobs:
 
@@ -24,6 +24,7 @@ jobs:
         uses: actions/checkout@master
         with:
           ref: master
+          fetch-depth: 1000000
 
       - name: Space cleanup
         env:
