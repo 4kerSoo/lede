@@ -10,7 +10,7 @@ name: Merge-upstream
 
 on:
   schedule:
-    - cron: 05 12 * * *
+    - cron: 20 15 * * *
   # push:
   #   branches: 
   #     - master
