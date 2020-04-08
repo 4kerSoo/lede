@@ -11,7 +11,7 @@ name: OpenWrt-CI
 
 on:
   schedule:
-    - cron: 25 15 * * *
+    - cron: 35 15 * * *
 
 jobs:
 
