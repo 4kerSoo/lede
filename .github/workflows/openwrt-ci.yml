@@ -11,7 +11,7 @@ name: OpenWrt-CI
 
 on:
   schedule:
-    - cron: 05 02 * * *
+    - cron: 15 17 * * *
   push:
     tags:
       - '*'
