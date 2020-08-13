@@ -9,7 +9,7 @@ name: OpenWrt-CI
 
 on:
   schedule:
-    - cron: 0 20 * * *
+    - cron: 20 14 * * *
   release:
     types: [published]
 
@@ -51,8 +51,14 @@ jobs:
           ./scripts/feeds install -a
 
       - name: Generate configuration file
-        run: make defconfig
-
+        run: |
+          cp ./makeconfig.d/openwrt.config ./.config
+          make defconfig
+          
+      - name: theme
+        run: |
+          sed -i 's/+luci-theme-bootstrap/+luci-theme-argon/g' ./feeds/luci/collections/luci/Makefile
+          
       - name: Make download
         run: |
           make download -j8
