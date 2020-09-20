@@ -12,7 +12,11 @@ on:
     - cron: 40 21 * * *
   release:
     types: [published]
-
+    
+  workflow_dispatch:
+  watch:
+    types: started
+    
 jobs:
 
   build_openwrt:
