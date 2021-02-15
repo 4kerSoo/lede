@@ -2,7 +2,7 @@ name: 'Redmi-AC2100'
 
 on:
   schedule:
-    - cron: '0 16 * * Fri'
+    - cron: '0 16 * * *'
       
   workflow_dispatch:
     
