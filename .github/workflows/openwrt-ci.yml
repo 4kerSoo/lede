@@ -8,8 +8,6 @@ on:
     types: [published]
     
   workflow_dispatch:
-  watch:
-    types: started
     
 jobs:
 
