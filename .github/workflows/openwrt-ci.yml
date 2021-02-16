@@ -40,6 +40,12 @@ jobs:
 
           df -h
 
+      - name: theme
+        run: |
+          cd lede/package/lean
+          rm -rf luci-theme-argon
+          git clone -b 18.06 https://github.com/jerrykuku/luci-theme-argon
+
       - name: Update feeds
         run: |
           sed -i 's/#src-git helloworld/src-git helloworld/g' ./feeds.conf.default
@@ -52,7 +58,7 @@ jobs:
         run: |
           cp ./makeconfig.d/openwrt.config ./.config
           make defconfig
-          
+        
       - name: Make download
         run: |
           make download -j8
