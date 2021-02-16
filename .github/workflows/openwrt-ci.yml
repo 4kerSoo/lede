@@ -57,13 +57,7 @@ jobs:
         run: |
           make download -j8
           find dl -size -1024c -exec rm -f {} \;
-          
-      - name: theme
-        run: |
-          cd lede/package/lean
-          rm -rf luci-theme-argon
-          git clone -b 18.06 https://github.com/jerrykuku/luci-theme-argon.git
-          
+
       - name: Compile firmware
         run: |
           make -j$(nproc) || make -j1 V=s
