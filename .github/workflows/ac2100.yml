@@ -41,7 +41,7 @@ jobs:
       - name: Update feeds
         run: |
           sed -i 's/#src-git helloworld https://github.com/fw876/helloworld/src-git kenzo https://github.com/kenzok8/openwrt-packages/g' ./feeds.conf.default
-          sed -i 's/#src-git oldpackages http://git.openwrt.org/packages.git/src-git kenzo https://github.com/kenzok8/openwrt-packages/g' ./feeds.conf.default
+          sed -i 's/#src-git oldpackages http://git.openwrt.org/packages.git/src-git small https://github.com/kenzok8/small/g' ./feeds.conf.default
           ./scripts/feeds update -a
           ./scripts/feeds install -a
           sed -i 's/+luci-theme-bootstrap/+luci-theme-argon/g' ./feeds/luci/collections/luci/Makefile
